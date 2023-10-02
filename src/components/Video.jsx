@@ -1,4 +1,5 @@
 import './video.css';
+import PlayButton from './PlayButton';
 function Video({title,img,views, time, verified}){
     let channel = "CodeOnAir";
     return (
@@ -19,6 +20,7 @@ function Video({title,img,views, time, verified}){
                     <p>{time}</p>
                 </div>
             </div>
+            <PlayButton>Hii</PlayButton>
         </>
     );
 }
