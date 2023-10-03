@@ -1,10 +1,10 @@
 import './video.css';
-import PlayButton from './PlayButton';
-function Video({title,img,views, time, verified}){
+
+function Video({title,img,views, time, verified,id}){
     let channel = "CodeOnAir";
     return (
         <>
-            <div className="container">
+            <div className="container" id={id}>
              <div className="thumbnail">
                     <img src={img} alt="thumbnail" />
                 </div>
@@ -20,7 +20,6 @@ function Video({title,img,views, time, verified}){
                     <p>{time}</p>
                 </div>
             </div>
-            <PlayButton>Hii</PlayButton>
         </>
     );
 }

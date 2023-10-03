@@ -1,15 +1,20 @@
-import Video from './components/Video';
+import { useState } from 'react';
+import AddVideo from './components/AddVideo';
 import './App.css';
-import videos from './data/data';
+import videosDB from './data/data';
+import VideoList from './components/VideoList';
+
 function App() {
- 
+const [videos,setVideos] = useState(videosDB);
+function newVideo(newVdo){
+  setVideos([
+    ...videos,{...newVdo, id : videos.length+1}
+  ]);
+}
   return (
     <>
-      <section className='main-container'>
-        {
-        videos.map(video => <Video title={videos.title} img={video.img} verified={video.verified} views={video.views} time={video.time} />)  
-        }
-      </section>
+      <AddVideo addvideo={newVideo}/>
+      <VideoList videos={videos} />
     </>
   );
 }
