@@ -6,6 +6,7 @@ import VideoList from './components/VideoList';
 
 function App() {
 const [videos,setVideos] = useState(videosDB);
+
 function newVideo(newVdo){
   setVideos([
     ...videos,{...newVdo, id : videos.length+1}
@@ -13,7 +14,7 @@ function newVideo(newVdo){
 }
   return (
     <>
-      <AddVideo addvideo={newVideo}/>
+      <AddVideo newVideo={newVideo}/>
       <VideoList videos={videos} />
     </>
   );

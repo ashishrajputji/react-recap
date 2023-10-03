@@ -1,4 +1,5 @@
-import React,{useState} from 'react'
+import React,{useState} from 'react';
+
 const initialState = {
     verified : false,
     title : "",
@@ -9,11 +10,13 @@ const initialState = {
 
 function AddVideo({newVideo}) {
     const [video,setVideo] = useState(initialState);
+    
     function handleSubmit(e){
         e.preventDefault();
         newVideo(video);
         setVideo(initialState);
     }
+
     function handleChange(e){
         e.stopPropagation();
         setVideo({...video,
