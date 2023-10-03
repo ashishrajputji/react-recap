@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-
+import "./AddVideo.css";
 const initialState = {
     verified : false,
     title : "",
@@ -25,10 +25,18 @@ function AddVideo({newVideo}) {
     }
   return (
     <>
-        <form action="">
+        <form action="" className='addVideo-form'>
+            <div className="addVideo-form-heading">
+                <h1>Add New Video Playlist</h1>
+            </div>
+            <div className='addVideo-form-input'>
             <input type="text" name="title" id=""  placeholder='title' value={video.title}  onChange={handleChange}/>
             <input type="text" name = "views" placeholder='views' value={video.views} onChange={handleChange} />
+            </div>
+            <div className='addVideo-form-button'>
             <button type="submit" onClick={handleSubmit}>Add Video</button>
+            </div>
+            
         </form>
     </>
   )
